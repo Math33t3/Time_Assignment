@@ -19,7 +19,8 @@ setInterval(() => {
     const minutesRemaining = Math.floor((timeRemaining / (1000 * 60)) % 60);
     const secondsRemaining = Math.floor((timeRemaining / (1000) % 60));
 
-    countdownElement.innerText = `${daysRemaining} days, ${hoursRemaining} hours, ${minutesRemaining} minutes and ${secondsRemaining} seconds remaining until next node.js session :D`;
+    countdownElement.innerText = `There's ${daysRemaining} days, ${hoursRemaining} hours, ${minutesRemaining} minutes and ${secondsRemaining} seconds remaining until the start of our next node.js session :D`;
+    countdownElement.style.color = "white"
 }, 1000);
 
 
@@ -27,7 +28,7 @@ function updateTime() {
     const thisMoment = new Date();
     const options = { hour: 'numeric', minute: 'numeric', second: 'numeric' 
     ,weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',};
-    const currentTime = thisMoment.toLocaleDateString('da-DK', options);
+    const currentTime = thisMoment.toLocaleDateString('en-US', options);
     document.getElementById('current-time').innerText = currentTime;
 }
 
